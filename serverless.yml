@@ -53,16 +53,22 @@ package:
    - ./bin/**
 
 functions:
-  hello:
-    handler: bin/hello
+  get:
+    handler: bin/getBin
     events:
       - http:
-          path: hello/{name}
+          path: get/{name}
           method: get
           request:
             parameter:
               paths:
                 name: true
+  post:
+    handler: bin/postBin
+    events:
+      - http:
+          path: post
+          method: post
 
 
 #    The following are a few example events you can configure
